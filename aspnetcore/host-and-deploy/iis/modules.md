@@ -6,10 +6,11 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/13/2020
-no-loc: [appsettings.json, "ASP.NET Core Identity", cookie, Cookie, Blazor, "Blazor Server", "Blazor WebAssembly", "Identity", "Let's Encrypt", Razor, SignalR]
 uid: host-and-deploy/iis/modules
 ---
 # IIS modules with ASP.NET Core
+
+[!INCLUDE[](~/includes/not-latest-version.md)]
 
 Some of the native IIS modules and all of the IIS managed modules aren't able to process requests for ASP.NET Core apps. In many cases, ASP.NET Core offers an alternative to the scenarios addressed by IIS native and managed modules.
 
@@ -30,7 +31,7 @@ The table indicates native IIS modules that are functional with ASP.NET Core app
 | **Digest Authentication**<br>`DigestAuthenticationModule`                                        | Yes | |
 | **Directory Browsing**<br>`DirectoryListingModule`                                               | No  | [Directory Browsing Middleware](xref:fundamentals/static-files#enable-directory-browsing) |
 | **Dynamic Compression**<br>`DynamicCompressionModule`                                            | Yes | [Response Compression Middleware](xref:performance/response-compression) |
-| **Failed Requests Tracing**<br>`FailedRequestsTracingModule`                                     | Yes | [ASP.NET Core Logging](xref:fundamentals/logging/index#tracesource-provider) |
+| **Failed Requests Tracing**<br>`FailedRequestsTracingModule`                                     | Yes | [ASP.NET Core Logging](xref:fundamentals/logging/index#dotnet-trace-tooling) |
 | **File Caching**<br>`FileCacheModule`                                                            | No  | [Response Caching Middleware](xref:performance/caching/middleware) |
 | **HTTP Caching**<br>`HttpCacheModule`                                                            | No  | [Response Caching Middleware](xref:performance/caching/middleware) |
 | **HTTP Logging**<br>`HttpLoggingModule`                                                          | Yes | [ASP.NET Core Logging](xref:fundamentals/logging/index) |
@@ -50,6 +51,7 @@ The table indicates native IIS modules that are functional with ASP.NET Core app
 | **Token Caching**<br>`TokenCacheModule`                                                          | Yes | |
 | **URI Caching**<br>`UriCacheModule`                                                              | Yes | |
 | **URL Authorization**<br>`UrlAuthorizationModule`                                                | Yes | [ASP.NET Core Identity](xref:security/authentication/identity) |
+| **WebDav**<br>`WebDAV`                                                                           | No  | |
 | **Windows Authentication**<br>`WindowsAuthenticationModule`                                      | Yes | |
 
 &#8224;The URL Rewrite Module's `isFile` and `isDirectory` match types don't work with ASP.NET Core apps due to the changes in [directory structure](xref:host-and-deploy/directory-structure).

@@ -6,10 +6,11 @@ monikerRange: '>= aspnetcore-5.0'
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/07/2020
-no-loc: [appsettings.json, "ASP.NET Core Identity", cookie, Cookie, Blazor, "Blazor Server", "Blazor WebAssembly", "Identity", "Let's Encrypt", Razor, SignalR]
 uid: host-and-deploy/iis/logging-and-diagnostics
 ---
-# Log creation and redirection
+# IIS log creation and redirection
+
+[!INCLUDE[](~/includes/not-latest-version.md)]
 
 The ASP.NET Core Module redirects stdout and stderr console output to disk if the `stdoutLogEnabled` and `stdoutLogFile` attributes of the `aspNetCore` element are set. Any folders in the `stdoutLogFile` path are created by the module when the log file is created. The app pool must have write access to the location where the logs are written (use `IIS AppPool\{APP POOL NAME}` to provide write permission, where the placeholder `{APP POOL NAME}` is the app pool name).
 
@@ -36,7 +37,7 @@ The following sample `aspNetCore` element configures stdout logging at the relat
 
 When publishing an app for Azure App Service deployment, the Web SDK sets the `stdoutLogFile` value to `\\?\%home%\LogFiles\stdout`. The `%home` environment variable is predefined for apps hosted by Azure App Service.
 
-To create logging filter rules, see the [Configuration](xref:fundamentals/logging/index#log-filtering) and [Log filtering](xref:fundamentals/logging/index#log-filtering) sections of the ASP.NET Core logging documentation.
+To create logging filter rules, see the [Apply log filter rules in code](xref:fundamentals/logging/index#apply-log-filter-rules-in-code) section of the ASP.NET Core logging documentation.
 
 For more information on path formats, see [File path formats on Windows systems](/dotnet/standard/io/file-path-formats).
 
